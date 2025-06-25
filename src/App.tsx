@@ -2,6 +2,7 @@ import clsx from "clsx";
 import { LayoutGroup, motion } from "framer-motion";
 import { Bolt, CircleCheck, Ellipsis, Flag, Hourglass } from "lucide-react";
 import { useState } from "react";
+import CustomCheckboxForm from "./components/ CustomCheckboxForm";
 import LoadingShine from "./components/LoadingShine";
 
 export default function App() {
@@ -86,7 +87,7 @@ export default function App() {
                       <p className="text-xs text-neutral-500">75%</p>
                     </motion.div>
                   </motion.div>
-                  <form action=""></form>
+                  <CustomCheckboxForm />
                 </div>
               )}
 
