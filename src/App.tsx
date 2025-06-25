@@ -18,30 +18,33 @@ export default function App() {
             height: isCollapse ? 100 : "auto",
             borderRadius: isCollapse ? 15 : 8,
           }}
-          className="bg-neutral-200 p-[2px]"
+          transition={{ duration: 0.5, ease: "linear" }}
+          className="bg-neutral-200 p-[2px] overflow-hidden"
         >
           <motion.header
             layout
             onClick={() => setIsCollapse(!isCollapse)}
             className="flex justify-between p-2 w-full"
           >
-            <div
+            <motion.div
+              layout
               className={clsx(
                 "flex gap-1 p-1 rounded-md",
                 isCollapse && "bg-neutral-300"
               )}
             >
-              <div className="p-[2px] rounded-md bg-neutral-200">
+              <motion.div layout className="p-[2px] rounded-md bg-neutral-200">
                 <Bolt size={30} strokeWidth={2} color="#737373" />
-              </div>
-              <p
+              </motion.div>
+              <motion.p
+                layout
                 className={clsx(
                   isCollapse ? "text-xl font-bold" : "font-bold text-2xl"
                 )}
               >
                 Design System
-              </p>
-            </div>
+              </motion.p>
+            </motion.div>
             {isCollapse && (
               <motion.div
                 layoutId="loader"
@@ -55,6 +58,7 @@ export default function App() {
               <motion.div
                 animate={{ opacity: 1 }}
                 initial={{ opacity: 0 }}
+                transition={{ ease: "linear" }}
                 className="bg-neutral-200 h-8 w-8 rounded-md flex justify-center items-center border-neutral-300 border-2"
               >
                 <Ellipsis size={25} />
@@ -118,7 +122,7 @@ export default function App() {
                       </p>
                     </motion.div>
                   </div>
-                  <div className="flex">
+                  <motion.div layout className="flex">
                     <img
                       src="/public/leao-messi.jpg"
                       alt="messi"
@@ -134,7 +138,7 @@ export default function App() {
                       alt="messi"
                       className="rounded-full h-6 w-6 outline-2 z-[1] outline-green-500"
                     />
-                  </div>
+                  </motion.div>
                 </motion.div>
               )}
             </div>
