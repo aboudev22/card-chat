@@ -14,7 +14,7 @@ export default function App() {
         <motion.section
           initial={false}
           animate={{
-            width: isCollapse ? 500 : 800,
+            width: isCollapse ? 500 : 600,
             height: isCollapse ? 100 : "auto",
             borderRadius: isCollapse ? 15 : 8,
           }}
@@ -92,6 +92,33 @@ export default function App() {
                     </motion.div>
                   </motion.div>
                   <CustomCheckboxForm />
+                  <motion.div layout className="flex gap-4">
+                    <div className="flex justify-start items-center gap-3 px-1 border-2 border-neutral-500/80 rounded-full py-[2px]">
+                      <motion.img
+                        layoutId="leo1"
+                        src="/public/leao-messi.jpg"
+                        alt="messi"
+                        className="rounded-full h-6 w-6 outline-2 z-[3] translate-x-2 outline-green-500"
+                      />
+                      <p>Leo</p>
+                    </div>
+                    <div className="flex gap-2">
+                      <img
+                        src="/kakshi.jpg"
+                        alt="kakshi"
+                        className="rounded-full h-6 w-6 outline-2 z-[2] translate-x-1 outline-green-500"
+                      />
+                      <p>Kakashi</p>
+                    </div>
+                    <div className="flex gap-2">
+                      <img
+                        src="/public/leao-messi.jpg"
+                        alt="messi"
+                        className="rounded-full h-6 w-6 outline-2 z-[1] outline-green-500"
+                      />
+                      <p>Leo</p>
+                    </div>
+                  </motion.div>
                 </div>
               )}
 
@@ -123,17 +150,20 @@ export default function App() {
                     </motion.div>
                   </div>
                   <motion.div layout className="flex">
-                    <img
+                    <motion.img
+                      layoutId="leo1"
                       src="/public/leao-messi.jpg"
                       alt="messi"
                       className="rounded-full h-6 w-6 outline-2 z-[3] translate-x-2 outline-green-500"
                     />
-                    <img
+                    <motion.img
+                      layoutId="kakashi"
                       src="/kakshi.jpg"
                       alt="kakshi"
                       className="rounded-full h-6 w-6 outline-2 z-[2] translate-x-1 outline-green-500"
                     />
-                    <img
+                    <motion.img
+                      layoutId="leo2"
                       src="/public/leao-messi.jpg"
                       alt="messi"
                       className="rounded-full h-6 w-6 outline-2 z-[1] outline-green-500"
