@@ -32,9 +32,10 @@ export default function CustomCheckboxForm() {
         return (
           <div
             key={label}
-            className="flex items-center gap-1 cursor-pointer select-none"
+            className="relative flex items-center gap-[2px] cursor-pointer select-none"
             onClick={() => toggleItem(label)}
           >
+            <div className="w-4 -top-7 -left-5 bottom-2 absolute rounded-bl-md border-l-2 border-b-2 border-gray-400 bg-transparent"></div>
             <div
               className={`w-4 h-4 rounded-full border-2 flex items-center justify-center transition-colors duration-200
               ${

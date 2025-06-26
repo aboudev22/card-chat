@@ -7,7 +7,7 @@ import UserIcon from "./components/UserIcon";
 export default function App() {
   const [isCollapse, setIsCollapse] = useState(true);
   return (
-    <div className="w-screen h-screen flex flex-col gap-5 justify-center items-center">
+    <div className="w-screen h-screen flex flex-col bg-white gap-5 justify-center items-center">
       <Tag />
       <CustomCheckboxForm />
       <UserIcon
