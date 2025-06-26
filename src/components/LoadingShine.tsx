@@ -18,7 +18,10 @@ export default function LoadingShine({ width, load, className }: LoadingProps) {
     <LayoutGroup>
       <div
         style={{ width }}
-        className={clsx("h-2 w-[150px] bg-neutral-300 rounded-full", className)}
+        className={clsx(
+          "h-2 w-[150px] bg-neutral-300 rounded-full overflow-hidden",
+          className
+        )}
       >
         <motion.div
           layout

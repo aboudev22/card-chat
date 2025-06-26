@@ -1,4 +1,5 @@
 import clsx from "clsx";
+import { motion } from "framer-motion";
 import { FlagTriangleRight, Timer } from "lucide-react";
 import { useState } from "react";
 
@@ -6,8 +7,8 @@ type PriorityType = "urgent" | "medium" | "low";
 type StatusType = "in-progress" | "finished" | "not-started";
 
 export default function Tag() {
-  const [priority, setPriority] = useState<PriorityType>("low");
-  const [status, setStatus] = useState<StatusType>("not-started");
+  const [priority, setPriority] = useState<PriorityType>("urgent");
+  const [status, setStatus] = useState<StatusType>("in-progress");
 
   const handleStatusChange = (value: StatusType) => {
     setStatus(value);
@@ -21,12 +22,14 @@ export default function Tag() {
       {/* Priority */}
       <div className="flex gap-2">
         <div className="flex justify-center items-center">
-          <FlagTriangleRight
-            size={16}
-            strokeWidth={2.2}
-            fill="#737373"
-            color="#737373"
-          />
+          <motion.div layoutId="flag">
+            <FlagTriangleRight
+              size={16}
+              strokeWidth={2.2}
+              fill="#737373"
+              color="#737373"
+            />
+          </motion.div>
           <p className="text-xs font-bold text-neutral-500">priority</p>
         </div>
         <select
@@ -56,7 +59,9 @@ export default function Tag() {
       {/* Status */}
       <div className="flex gap-2">
         <div className="flex justify-center items-center">
-          <Timer size={16} strokeWidth={2.2} color="#737373" />
+          <motion.div layoutId="timer">
+            <Timer size={16} strokeWidth={2.2} color="#737373" />
+          </motion.div>
           <p className="text-xs font-bold text-neutral-500">status</p>
         </div>
         <select
